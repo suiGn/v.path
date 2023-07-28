@@ -1,0 +1,28 @@
+{
+    "name": "v.path",
+    "version": "2.1.2",
+    "description": "aiming for it to be v://path.",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+      "storage",
+      "data",
+      "weights"
+    ],
+    "author": "Sui Gn",
+    "license": "MIT License",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/suiGn/theVault"
+    },
+    "bugs": {
+      "url": "https://github.com/suiGn/theVault/issues"
+    },
+    "homepage": "https://github.com/suiGn/theVault#readme",
+    "dependencies": {
+  
+    }
+  }
+  

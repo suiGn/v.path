@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>theVault</title>
+  <style>
+    .pie-chart {
+      width: 300px;
+      height: 300px;
+      position: relative;
+      border-radius: 50%;
+      background-color: #f2f2f2;
+      overflow: hidden;
+    }
+
+    .slice {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      clip: rect(0, 150px, 300px, 0);
+      transform: rotate(0deg);
+      transform-origin: center center;
+    }
+
+    .slice:nth-child(1) {
+      background-color: #ff6384;
+      transform: rotate(45deg);
+    }
+
+    .slice:nth-child(2) {
+      background-color: #36a2eb;
+      transform: rotate(90deg);
+    }
+
+    .slice:nth-child(3) {
+      background-color: #ffce56;
+      transform: rotate(135deg);
+    }
+
+    .slice:nth-child(4) {
+      background-color: #4bc0c0;
+      transform: rotate(180deg);
+    }
+
+    .slice:nth-child(5) {
+      background-color: #9966ff;
+      transform: rotate(225deg);
+    }
+
+    .slice:nth-child(6) {
+      background-color: #ff9f40;
+      transform: rotate(270deg);
+    }
+
+    .slice:nth-child(7) {
+      background-color: #61d662;
+      transform: rotate(315deg);
+    }
+
+    .usage-info {
+      text-align: center;
+      font-size: 16px;
+      margin-top: 20px;
+    }
+  </style>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const vault = document.querySelector('.pie-chart');
+      const usageInfo = document.querySelector('.usage-info');
+
+      const calculateDirectorySize = () => {
+        // Use JavaScript to calculate the size of the current directory
+        // Replace the following line with your own implementation
+        const directorySize = Math.floor(Math.random() * 1000);
+
+        // Update the pie chart slice based on the directory size
+        const slices = document.querySelectorAll('.slice');
+        const totalSize = slices.length * 1000; // Total size for a full pie
+
+        slices.forEach((slice, index) => {
+          const sliceSize = (directorySize / totalSize) * 100;
+          slice.style.transform = `rotate(${index * (360 / slices.length)}deg)`;
+          slice.style.clip = `rect(0, 150px, 300px, 0)`;
+        });
+
+        // Update the usage info text
+        usageInfo.textContent = `Directory Size: ${directorySize} bytes`;
+      };
+
+      calculateDirectorySize();
+    });
+  </script>
+</head>
+<body>
+  <div class="pie-chart">
+    <div class="slice"></div>
+    <div class="slice"></div>
+    <div class="slice"></div>
+    <div class="slice"></div>
+    <div class="slice"></div>
+    <div class="slice"></div>
+    <div class="slice"></div>
+  </div>
+  <div class="usage-info"></div>
+</body>
+</html>
