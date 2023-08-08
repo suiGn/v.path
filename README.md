@@ -1,7 +1,6 @@
 # v.path
 
-Visit https://www.neurons.me/docs/v-path for documentation.
-<img src="./logo.svg" alt="SVG Image" width="103" height="111" style="width123px; height:123px;">
+npm i v.path
 
 **What is v.path?** 
 
@@ -17,3 +16,7 @@ Here are some key points about the v path and memory allocations:
 - **Path and Credential-based Access:** **v.path** enforces access control by validating the path and credentials provided by users or systems trying to access specific memory resources. It ensures that only authorized entities can read or modify the data stored in those paths.
 
 Overall, **v.path** acts as a secure and centralized memory management system for the network, providing efficient resource allocation, encryption, and access control mechanisms to protect and manage the network's data.
+
+https://www.neurons.me/
+
+Visit https://www.neurons.me/docs/v-path for documentation.
