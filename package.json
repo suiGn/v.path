@@ -1,7 +1,7 @@
 {
     "name": "v.path",
-    "version": "2.1.7",
-    "description": "aiming for it to be v://path.",
+    "version": "2.1.8",
+    "description": "v://path aiming to be like c://path.",
     "main": "index.js",
     "scripts": {
       "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,12 +15,12 @@
     "license": "MIT License",
     "repository": {
       "type": "git",
-      "url": "https://github.com/suiGn/theVault"
+      "url": "https://github.com/suiGn/v.path"
     },
     "bugs": {
-      "url": "https://github.com/suiGn/theVault/issues"
+      "url": "https://github.com/suiGn/v.path/issues"
     },
-    "homepage": "https://github.com/suiGn/theVault#readme",
+    "homepage": "https://github.com/suiGn/v.path#readme",
     "dependencies": {
   
     }
