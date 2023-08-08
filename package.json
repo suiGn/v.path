@@ -1,6 +1,6 @@
 {
     "name": "v.path",
-    "version": "2.1.8",
+    "version": "2.1.9",
     "description": "v://path aiming to be like c://path.",
     "main": "index.js",
     "scripts": {
