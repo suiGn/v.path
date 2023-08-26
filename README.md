@@ -3,7 +3,9 @@
 # v.path
 Install using npm.
 
+```js
 npm i v.path
+```
 
 **What is v.path?** 
 A storage system that manages and tracks memory path usage on a network. It applies memory management methods similar to those used in individual computers to the network as a whole.
@@ -22,7 +24,7 @@ https://www.neurons.me/
 Visit https://www.neurons.me/docs/v-path for documentation.
 
 # Clone THIS Sandbox DEMO Playground
-Welcome to the Playground, where the entire THIS.ME suite comes together with NEURONS.ME to provide a rich development and execution environment for your AI adventures.
+Welcome to the Playground, where the entire suite comes together with NEURONS.ME to provide a rich development and execution environment for your AI adventures.
 ## Sandbox Demo Quick Start
 ### 1. Clone the Repository
 
