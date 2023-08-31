@@ -6,7 +6,6 @@ Install using npm.
 ```js
 npm i v.path
 ```
-
 **What is v.path?** 
 A storage system that manages and tracks memory path usage on a network. It applies memory management methods similar to those used in individual computers to the network as a whole.
 The encryption and decryption of information are based on the specific path and credentials it is serving.
