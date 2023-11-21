@@ -11,8 +11,6 @@
       "data",
       "weights"
     ],
-    "author": "Sui Gn",
-    "license": "MIT License",
     "repository": {
       "type": "git",
       "url": "https://github.com/suiGn/v.path"
@@ -22,7 +20,9 @@
     },
     "homepage": "https://github.com/suiGn/v.path#readme",
     "dependencies": {
-  
-    }
+    },
+    "author": "suiGn",
+    "license": "MIT",
+    "repoType": "NPM Package"
   }
   
