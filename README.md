@@ -22,32 +22,7 @@ Overall, **v.path** acts as a secure and centralized memory management system fo
 https://www.neurons.me/
 Visit https://www.neurons.me/docs/v-path for documentation.
 
-# Clone THIS Sandbox DEMO Playground
-Welcome to the Playground, where the entire suite comes together with NEURONS.ME to provide a rich development and execution environment for your AI adventures.
-## Sandbox Demo Quick Start
-### 1. Clone the Repository
 
-```bash
-git clone https://github.com/suiGn/.me.git
-```
-### 2. Navigate to the Project Directory
-```bash
-cd .me
-```
-### 3. Install Dependencies
-You can use either Yarn or npm to install the necessary dependencies.
-Using Yarn:
-```bash
-yarn install 
-```
-Using npm:
-```bash
-npm install
-```
-### 4. Launch the Application
-```
-npx electron index.js
-```
 ### License
 This project is licensed under the MIT License. See the LICENSE file for details.
 
