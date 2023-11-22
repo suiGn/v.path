@@ -11,16 +11,17 @@
       "data",
       "weights"
     ],
+    "bugs": {
+      "url": "https://github.com/suiGn/v.path/issues"
+    },
+    "dependencies": {
+    },
     "repository": {
       "type": "git",
       "url": "https://github.com/suiGn/v.path"
     },
-    "bugs": {
-      "url": "https://github.com/suiGn/v.path/issues"
-    },
-    "homepage": "https://github.com/suiGn/v.path#readme",
-    "dependencies": {
-    },
+    "homepage": "https://www.npmjs.com/package/v.path",
+    "docs": "https://suiGn.github.io/v.path",
     "author": "suiGn",
     "license": "MIT",
     "repoType": "NPM Package"
