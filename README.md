@@ -10,13 +10,13 @@ Install using npm.
 npm i v.path
 ```
 
-## **What is v.path?** 
+A storage system that manages and tracks memory path usage on a network. 
 
-A storage system that manages and tracks memory path usage on a network. It applies memory management methods similar to those used in individual computers to the network as a whole.
+It applies memory management methods similar to those used in individual computers to the network as a whole.
 
 The encryption and decryption of information are based on the specific path and credentials it is serving.
 
-Here are some key points about the v path and memory allocations:
+Here are some key points about the v.path and memory allocations:
 
 - **Memory Path Usage:** **v.path** keeps track of the usage and allocation of memory paths on the network. It provides a centralized system for managing and organizing memory resources across different nodes.
 - **Memory Management Methods:** **v.path** applies memory management techniques, such as allocation, deallocation, and garbage collection, to optimize the utilization of memory paths within the network. This helps ensure efficient resource allocation and prevents memory leaks or fragmentation.
@@ -25,8 +25,7 @@ Here are some key points about the v path and memory allocations:
 
 Overall, **v.path** acts as a secure and centralized memory management system for the network, providing efficient resource allocation, encryption, and access control mechanisms to protect and manage the network's data.
 
-https://www.neurons.me/
-Visit https://www.neurons.me/docs/v-path for documentation.
+https://www.neurons.me/v.path
 
 
 ### License
@@ -39,5 +38,3 @@ Our open-source project is designed with respect to user privacy. Given its natu
 This package is provided "as-is" without any guarantees or warranties of any kind. Users are responsible for their use of the project and any consequences thereof. We do not guarantee continuous functionality, accuracy, or security of the project and are not liable for any damages or losses users might incur. Users are encouraged to review our complete Terms of Usage before implementing or contributing to the project.
 https://www.neurons.me/terms-of-use
 https://www.neurons.me/privacy-policy
-
-yep
