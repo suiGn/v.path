@@ -1,59 +1,10 @@
-const fs = require('fs');
-const path = require('path');
+//v.path index.js
+import { createPool } from './src/dbs/_db.js';
+import { TheVault } from './src/theVault.js';
+// ... import any other modules ...
 
-class TheVault {
-  constructor() {
-    this.workingDir = process.cwd();
-    this.dirSize = this.calculateDirectorySize(this.workingDir);
-    this.formattedSize = this.formatSize(this.dirSize);
-  }
-
-  calculateDirectorySize(dirPath) {
-    let totalSize = 0;
-    const traverseDirectory = (dirPath) => {
-      try {
-        const files = fs.readdirSync(dirPath);
-        files.forEach((file) => {
-          const filePath = path.join(dirPath, file);
-          const stats = fs.statSync(filePath);
-          if (stats.isFile()) {
-            totalSize += stats.size;
-          } else if (stats.isDirectory()) {
-            traverseDirectory(filePath);
-          }
-        });
-      } catch (err) {
-        // Handle the error here (e.g., log the error)
-        console.error(`Error while traversing directory: ${dirPath}`, err);
-      }
-    };
-
-    traverseDirectory(dirPath);
-    return totalSize;
-  }
-
-  formatSize(size) {
-    const units = ['B', 'KB', 'MB', 'GB'];
-    let formattedSize = size;
-    let unitIndex = 0;
-    while (formattedSize > 1024 && unitIndex < units.length - 1) {
-      formattedSize /= 1024;
-      unitIndex++;
-    }
-    return `${formattedSize.toFixed(2)} ${units[unitIndex]}`;
-  }
-
-  getWorkingDir() {
-    return this.workingDir;
-  }
-
-  getDirSize() {
-    return this.dirSize;
-  }
-
-  getFormattedSize() {
-    return this.formattedSize;
-  }
-}
-
-module.exports = TheVault;
+export {
+  createPool,
+  TheVault
+  // ... export other modules ...
+};

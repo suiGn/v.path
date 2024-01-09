@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +7,7 @@
   -
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Docs for V.Path Home</title>
+  <title>Docs for V.Path theVault.js</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -118,62 +120,105 @@
         <div class="core" id="main-content-wrapper">
             <div class="content">
                 <header class="page-title">
-                    <p></p>
-                    <h1>Home</h1>
+                    <p>Source</p>
+                    <h1>theVault.js</h1>
                 </header>
                 
 
 
 
     
-
-
-    <h3> </h3>
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
     <section>
-        <article><p><img src="v.path.png" alt="png"></p>
-<h1>v.path</h1>
-<p>Install using npm.</p>
-<pre class="prettyprint source lang-js"><code>npm i v.path
+        <article>
+            <pre class="prettyprint source linenums"><code>import fs from 'fs';
+import path from 'path';
+
+/**
+ * Class representing a vault for directory handling.
+ */
+class TheVault {
+  /**
+   * Create a TheVault instance.
+   */
+  constructor() {
+    this.workingDir = process.cwd();
+    this.dirSize = this.calculateDirectorySize(this.workingDir);
+    this.formattedSize = this.formatSize(this.dirSize);
+  }
+
+  /**
+   * Calculate the size of a directory and its contents.
+   * @param {string} dirPath - The path to the directory.
+   * @returns {number} The total size of the directory in bytes.
+   */
+  calculateDirectorySize(dirPath) {
+    let totalSize = 0;
+    const traverseDirectory = (dirPath) => {
+      try {
+        const files = fs.readdirSync(dirPath);
+        files.forEach((file) => {
+          const filePath = path.join(dirPath, file);
+          const stats = fs.statSync(filePath);
+          if (stats.isFile()) {
+            totalSize += stats.size;
+          } else if (stats.isDirectory()) {
+            traverseDirectory(filePath);
+          }
+        });
+      } catch (err) {
+        console.error(`Error while traversing directory: ${dirPath}`, err);
+      }
+    };
+
+    traverseDirectory(dirPath);
+    return totalSize;
+  }
+
+  /**
+   * Format the size from bytes to a more readable format.
+   * @param {number} size - The size in bytes.
+   * @returns {string} The size formatted as a string with appropriate units.
+   */
+  formatSize(size) {
+    const units = ['B', 'KB', 'MB', 'GB'];
+    let formattedSize = size;
+    let unitIndex = 0;
+    while (formattedSize > 1024 &amp;&amp; unitIndex &lt; units.length - 1) {
+      formattedSize /= 1024;
+      unitIndex++;
+    }
+    return `${formattedSize.toFixed(2)} ${units[unitIndex]}`;
+  }
+
+  /**
+   * Get the working directory of the instance.
+   * @returns {string} The current working directory.
+   */
+  getWorkingDir() {
+    return this.workingDir;
+  }
+
+  /**
+   * Get the size of the working directory.
+   * @returns {number} The size of the directory in bytes.
+   */
+  getDirSize() {
+    return this.dirSize;
+  }
+
+  /**
+   * Get the formatted size of the working directory.
+   * @returns {string} The formatted size of the directory.
+   */
+  getFormattedSize() {
+    return this.formattedSize;
+  }
+}
+
+export default TheVault;
 </code></pre>
-<p>A <strong>storage system</strong> that <strong>manages</strong> and <strong>tracks</strong> <strong>memory path usage on a network</strong>.</p>
-<p>It applies memory management methods similar to those used in individual computers to the network as a whole.</p>
-<p><em>The encryption and decryption of information are based on the specific path and credentials it is serving.</em></p>
-<p>Here are some key points about the v.path and memory allocations:</p>
-<ul>
-<li><strong>Memory Path Usage:</strong> keeps track of the usage and allocation of memory paths on the network. It provides a <strong>centralized system</strong> for managing and organizing memory resources across different nodes.</li>
-<li><strong>Memory Management Methods:</strong> applies memory management techniques, such as allocation, deallocation, and garbage collection, to optimize the utilization of memory paths within the network. This helps ensure efficient resource allocation and prevents memory leaks or fragmentation.</li>
-<li><strong>Encryption and Decryption:</strong> securing the data stored within memory paths by performing encryption and decryption operations. It ensures that sensitive information remains protected and accessible only to authorized users with the appropriate credentials.</li>
-<li><strong>Path and Credential-based Access:</strong> enforces access control by validating the path and credentials provided by users or systems trying to access specific memory resources. It ensures that only authorized entities can read or modify the data stored in those paths.</li>
-</ul>
-<p>Overall, <strong>v.path</strong> acts as a secure and centralized memory management system for the network, providing efficient resource allocation, encryption, and access control mechanisms to protect and manage the network's data.</p>
-<p>https://www.neurons.me/v.path</p>
-<h3>License</h3>
-<p>This project is licensed under the MIT License. See the LICENSE file for details.</p>
-<p>This README provides an overview of the project, instructions for installation and usage, and highlights future projections. Feel free to modify or expand it as needed. Congratulations on building this exciting tool, and good luck with its continued development!</p>
-<h3>Privacy Policy</h3>
-<p>Our open-source project is designed with respect to user privacy. Given its nature, we neither collect nor store personal data of our users. Users might provide data or personal information through the project's usage, but we do not have access to or control over this information. For more details, please refer to our full Privacy Policy.</p>
-<h3>Terms of Usage</h3>
-<p>This package is provided &quot;as-is&quot; without any guarantees or warranties of any kind. Users are responsible for their use of the project and any consequences thereof. We do not guarantee continuous functionality, accuracy, or security of the project and are not liable for any damages or losses users might incur. Users are encouraged to review our complete Terms of Usage before implementing or contributing to the project.
-https://www.neurons.me/terms-of-use
-https://www.neurons.me/privacy-policy</p></article>
+        </article>
     </section>
-
-
 
 
 
