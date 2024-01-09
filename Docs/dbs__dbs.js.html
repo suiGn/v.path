@@ -7,7 +7,7 @@
   -
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Docs for V.Path theVault.js</title>
+  <title>Docs for V.Path dbs/_dbs.js</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -121,7 +121,7 @@
             <div class="content">
                 <header class="page-title">
                     <p>Source</p>
-                    <h1>theVault.js</h1>
+                    <h1>dbs/_dbs.js</h1>
                 </header>
                 
 
@@ -130,92 +130,39 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import fs from 'fs';
-import path from 'path';
+            <pre class="prettyprint source linenums"><code>//src/dbs/_dbs.js
+// Create a pool of connections to the database
+import pg from 'pg';
+const { Pool } = pg;
 
 /**
- * Class representing a vault for directory handling.
+ * Creates a pool of connections to the database.
+ * @param {string} host - The hostname of the database server.
+ * @param {number} port - The port number on which the database server is running.
+ * @param {string} user - The username for the database.
+ * @param {string} password - The password for the database.
+ * @param {string} database - The name of the database to connect to.
+ * @returns {Pool} A new Pool instance of PostgreSQL connections.
  */
-class TheVault {
-  /**
-   * Create a TheVault instance.
-   */
-  constructor() {
-    this.workingDir = process.cwd();
-    this.dirSize = this.calculateDirectorySize(this.workingDir);
-    this.formattedSize = this.formatSize(this.dirSize);
-  }
+export function createPool(host, port, user, password, database) {
+    const pool = new Pool({
+        host,
+        port,
+        user,
+        password,
+        database
+    });
 
-  /**
-   * Calculate the size of a directory and its contents.
-   * @param {string} dirPath - The path to the directory.
-   * @returns {number} The total size of the directory in bytes.
-   */
-  calculateDirectorySize(dirPath) {
-    let totalSize = 0;
-    const traverseDirectory = (dirPath) => {
-      try {
-        const files = fs.readdirSync(dirPath);
-        files.forEach((file) => {
-          const filePath = path.join(dirPath, file);
-          const stats = fs.statSync(filePath);
-          if (stats.isFile()) {
-            totalSize += stats.size;
-          } else if (stats.isDirectory()) {
-            traverseDirectory(filePath);
-          }
-        });
-      } catch (err) {
-        console.error(`Error while traversing directory: ${dirPath}`, err);
-      }
-    };
+    pool.connect(err => {
+        if (err) {
+            console.error('Error connecting to the database', err.stack);
+            return;
+        }
+        console.log('Connected to the database');
+    });
 
-    traverseDirectory(dirPath);
-    return totalSize;
-  }
-
-  /**
-   * Format the size from bytes to a more readable format.
-   * @param {number} size - The size in bytes.
-   * @returns {string} The size formatted as a string with appropriate units.
-   */
-  formatSize(size) {
-    const units = ['B', 'KB', 'MB', 'GB'];
-    let formattedSize = size;
-    let unitIndex = 0;
-    while (formattedSize > 1024 &amp;&amp; unitIndex &lt; units.length - 1) {
-      formattedSize /= 1024;
-      unitIndex++;
-    }
-    return `${formattedSize.toFixed(2)} ${units[unitIndex]}`;
-  }
-
-  /**
-   * Get the working directory of the instance.
-   * @returns {string} The current working directory.
-   */
-  getWorkingDir() {
-    return this.workingDir;
-  }
-
-  /**
-   * Get the size of the working directory.
-   * @returns {number} The size of the directory in bytes.
-   */
-  getDirSize() {
-    return this.dirSize;
-  }
-
-  /**
-   * Get the formatted size of the working directory.
-   * @returns {string} The formatted size of the directory.
-   */
-  getFormattedSize() {
-    return this.formattedSize;
-  }
+    return pool;
 }
-
-export default TheVault;
 </code></pre>
         </article>
     </section>

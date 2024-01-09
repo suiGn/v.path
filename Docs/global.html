@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +5,7 @@
   -
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Docs for V.Path theVault.js</title>
+  <title>Docs for V.Path Global</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -120,105 +118,372 @@
         <div class="core" id="main-content-wrapper">
             <div class="content">
                 <header class="page-title">
-                    <p>Source</p>
-                    <h1>theVault.js</h1>
+                    <p></p>
+                    <h1>Global</h1>
                 </header>
                 
 
 
 
+
+<section>
+
+<header>
     
-    <section>
-        <article>
-            <pre class="prettyprint source linenums"><code>import fs from 'fs';
-import path from 'path';
+        <h2></h2>
+        
+    
+</header>
 
-/**
- * Class representing a vault for directory handling.
- */
-class TheVault {
-  /**
-   * Create a TheVault instance.
-   */
-  constructor() {
-    this.workingDir = process.cwd();
-    this.dirSize = this.calculateDirectorySize(this.workingDir);
-    this.formattedSize = this.formatSize(this.dirSize);
-  }
+<article>
+    <div class="container-overview">
+    
+        
 
-  /**
-   * Calculate the size of a directory and its contents.
-   * @param {string} dirPath - The path to the directory.
-   * @returns {number} The total size of the directory in bytes.
-   */
-  calculateDirectorySize(dirPath) {
-    let totalSize = 0;
-    const traverseDirectory = (dirPath) => {
-      try {
-        const files = fs.readdirSync(dirPath);
-        files.forEach((file) => {
-          const filePath = path.join(dirPath, file);
-          const stats = fs.statSync(filePath);
-          if (stats.isFile()) {
-            totalSize += stats.size;
-          } else if (stats.isDirectory()) {
-            traverseDirectory(filePath);
-          }
-        });
-      } catch (err) {
-        console.error(`Error while traversing directory: ${dirPath}`, err);
-      }
-    };
+        
 
-    traverseDirectory(dirPath);
-    return totalSize;
-  }
 
-  /**
-   * Format the size from bytes to a more readable format.
-   * @param {number} size - The size in bytes.
-   * @returns {string} The size formatted as a string with appropriate units.
-   */
-  formatSize(size) {
-    const units = ['B', 'KB', 'MB', 'GB'];
-    let formattedSize = size;
-    let unitIndex = 0;
-    while (formattedSize > 1024 &amp;&amp; unitIndex &lt; units.length - 1) {
-      formattedSize /= 1024;
-      unitIndex++;
-    }
-    return `${formattedSize.toFixed(2)} ${units[unitIndex]}`;
-  }
+<dl class="details">
 
-  /**
-   * Get the working directory of the instance.
-   * @returns {string} The current working directory.
-   */
-  getWorkingDir() {
-    return this.workingDir;
-  }
+    
 
-  /**
-   * Get the size of the working directory.
-   * @returns {number} The size of the directory in bytes.
-   */
-  getDirSize() {
-    return this.dirSize;
-  }
+    
 
-  /**
-   * Get the formatted size of the working directory.
-   * @returns {string} The formatted size of the directory.
-   */
-  getFormattedSize() {
-    return this.formattedSize;
-  }
-}
+    
 
-export default TheVault;
-</code></pre>
-        </article>
-    </section>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class='vertical-section'>
+            <h1>Methods</h1>
+            <div class="members">
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="createPool">
+        <a class="href-link" href="#createPool">#</a>
+        
+        <span class="code-name">
+            
+                createPool<span class="signature">(host, port, user, password, database)</span><span class="type-signature"> &rarr; {Pool}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        Creates a pool of connections to the database.
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>host</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type">string</code>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last">The hostname of the database server.</td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>port</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type">number</code>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last">The port number on which the database server is running.</td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>user</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type">string</code>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last">The username for the database.</td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>password</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type">string</code>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last">The password for the database.</td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>database</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type">string</code>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last">The name of the database to connect to.</td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="dbs__dbs.js.html" class="button">View Source</a>
+            <span>
+                <a href="dbs__dbs.js.html">dbs/_dbs.js</a>, <a href="dbs__dbs.js.html#line15">line 15</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'>A new Pool instance of PostgreSQL connections.</div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<code class="param-type">Pool</code>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+            </div>
+        </div>
+    
+
+    
+
+    
+</article>
+
+</section>
 
 
 

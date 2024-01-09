@@ -1,6 +1,6 @@
 {
   "source": {
-    "include": ["./src", "./index.js"]
+    "include": ["./src/dbs/_dbs.js", "./src", "./index.js", "./README.md", "./KeyAspects.md"]
   },
   "opts": {
     "destination": "./docs",
