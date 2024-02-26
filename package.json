@@ -25,6 +25,7 @@
     "docs": "https://suiGn.github.io/v.path",
     "author": "suiGn",
     "license": "MIT",
-    "repoType": "NPM Package"
+    "repoType": "NPM Package",
+    "category": "utils"
   }
   
