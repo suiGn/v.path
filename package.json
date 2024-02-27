@@ -1,6 +1,6 @@
 {
     "name": "v.path",
-    "version": "2.3.1",
+    "version": "2.3.2",
     "description": "v://path aiming to be like c://path.",
     "main": "index.js",
     "scripts": {
@@ -15,7 +15,9 @@
     "bugs": {
         "url": "https://github.com/suiGn/v.path/issues"
     },
-    "dependencies": {},
+    "dependencies": {
+        "pg": "^8.11.3"
+    },
     "repository": {
         "type": "git",
         "url": "https://github.com/suiGn/v.path"
