@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +7,7 @@
   -
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Docs for V.Path Home</title>
+  <title>Docs for V.Path index.js</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -118,83 +120,45 @@
         <div class="core" id="main-content-wrapper">
             <div class="content">
                 <header class="page-title">
-                    <p></p>
-                    <h1>Home</h1>
+                    <p>Source</p>
+                    <h1>index.js</h1>
                 </header>
                 
 
 
 
     
-
-
-    <h3> </h3>
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
     <section>
-        <article><p><img src="v.path.png" alt="png"></p>
-<h1>v.path</h1>
-<p>v.path is a storage system within the neurons.me ecosystem, designed to manage and track memory path usage across a network. It embodies a comprehensive approach to memory management, akin to strategies employed in individual computer systems but extended to network-wide applications.</p>
-<!--v.path kind of like c://path.-->
-<h2>Core Features</h2>
-<ul>
-<li><strong>Memory Path Usage Tracking:</strong> v.path meticulously monitors and records the utilization of memory paths on the network, establishing a centralized system for the efficient management and organization of memory resources across various nodes.</li>
-<li><strong>Advanced Memory Management:</strong> By adopting memory management techniques such as allocation, deallocation, and garbage collection, v.path optimizes the use of memory paths, enhancing resource allocation and preventing issues like memory leaks or fragmentation.</li>
-<li><strong>Robust Encryption and Decryption:</strong> v.path ensures the security of data stored within memory paths through rigorous encryption and decryption processes, safeguarding sensitive information and ensuring access only to those with the right credentials.</li>
-<li><strong>Path and Credential-based Security:</strong> It enforces stringent access control, validating paths and credentials for users or systems attempting to access memory resources, thereby maintaining data integrity and confidentiality across the network.</li>
-</ul>
-<h2>Installation</h2>
-<p>To integrate v.path into your project, install it using npm:</p>
-<pre class="prettyprint source lang-bash"><code>npm i v.path
-</code></pre>
-<h2>Usage</h2>
-<p>Quick start example:</p>
-<pre class="prettyprint source lang-js"><code>import vpath from 'v.path';
+        <article>
+            <pre class="prettyprint source linenums"><code>// v.path index.js
+/*
+ⓝⓔⓤⓡⓞⓝⓢ.ⓜⓔ
+🆂🆄🅸🅶🅽                                                                                                                                         
+*/
+/**
+ * @module v.path
+ * @description The entry point for the v.path package, which provides various utilities for database management and data security.
+ */
 
-// Establish a database connection pool
-const dbPool = vpath.createPool({
-  host: 'your-hostname',
-  port: 5432,
-  user: 'your-username',
-  password: 'your-password',
-  database: 'your-database'
-});
+import { createPool } from './src/dbs/_dbs.js';
+import TheVault from './src/theVault.js';
+// ... import any other modules ...
 
-// Engage TheVault for advanced data management
-const vault = new vpath.TheVault();
-console.log(`Directory size: ${vault.getFormattedSize()}`);
+/**
+ * The v.path object aggregates all the modules, functions, and classes provided by the package.
+ * @type {object}
+ */
+const vpath = {
+  createPool,
+  TheVault,
+  // ... include other modules ...
+};
+
+export default vpath;
+
 </code></pre>
-<h2>Integration with Neurons.me</h2>
-<p>v.path enhances the neurons.me ecosystem, providing key utilities for data management and security. It's engineered to complement the sophisticated functionalities of neurons.me, ensuring that your data handling is as robust and efficient as your neural network operations.</p>
-<h2>Development Status</h2>
-<p>v.path is currently under active development. As we expand its capabilities, we encourage you to watch for new releases and stable versions in the project's Git tags. Your feedback and contributions during this phase are invaluable.</p>
-<h2>Contributing</h2>
-<p>Contributions to v.path are highly welcome! Whether you have suggestions, bug reports, or would like to contribute directly to the codebase, your input helps make v.path a more powerful tool.</p>
-<h2>License</h2>
-<p>v.path is made available under the MIT License. For more details, see the LICENSE inside the library.</p>
-<h2>Support and Documentation</h2>
-<p>Visit <a href="https://www.neurons.me/">neurons.me</a> for more information, support, and detailed documentation about v.path.</p>
-<p>For comprehensive details on our terms of service and privacy policy, refer to:</p>
-<ul>
-<li><a href="https://www.neurons.me/terms-of-use">Terms of Use</a></li>
-<li><a href="https://www.neurons.me/privacy-policy">Privacy Policy</a></li>
-</ul></article>
+        </article>
     </section>
-
-
 
 
 

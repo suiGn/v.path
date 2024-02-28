@@ -1,10 +1,10 @@
 {
   "source": {
-    "include": ["./src/dbs/_dbs.js", "./src", "./index.js", "./README.md", "./KeyAspects.md"]
+    "include": ["./src/dbs/_dbs.js", "./src", "./index.js", "./README.md", "./src/theVault.js"]
   },
   "opts": {
     "destination": "./docs",
-    "template": "../../../../../Sandbox/dev_tools/assets/better-docs",
+    "template": "../../../../../../Sandbox/dev_tools/assets/better-docs",
     "readme": "./README.md"
   },
   "templates": {
