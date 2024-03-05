@@ -1,6 +1,6 @@
 
 
-![png](img src="https://suign.github.io/assets/imgs/v.path.png)
+<img src="https://suign.github.io/assets/imgs/v.path.png" alt="v.path art">
 
 # v.path
 
