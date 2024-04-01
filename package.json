@@ -1,30 +1,31 @@
 {
     "name": "v.path",
-    "version": "2.2.5",
-    "description": "v://path aiming to be like c://path.",
+    "version": "2.3.41",
+    "description": "v.path: Envision c://path, reimagined for a neural and networked environment.",
     "main": "index.js",
     "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1"
     },
     "type": "module",
     "keywords": [
-      "storage",
-      "data",
-      "weights"
+        "storage",
+        "data",
+        "weights"
     ],
     "bugs": {
-      "url": "https://github.com/suiGn/v.path/issues"
+        "url": "https://github.com/suiGn/v.path/issues"
     },
     "dependencies": {
+        "pg": "^8.11.3"
     },
     "repository": {
-      "type": "git",
-      "url": "https://github.com/suiGn/v.path"
+        "type": "git",
+        "url": "https://github.com/suiGn/v.path"
     },
     "homepage": "https://www.npmjs.com/package/v.path",
     "docs": "https://suiGn.github.io/v.path",
     "author": "suiGn",
     "license": "MIT",
-    "repoType": "NPM Package"
-  }
-  
+    "repoType": "NPM Package",
+    "category": "utils"
+}
